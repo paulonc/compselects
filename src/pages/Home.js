@@ -8,6 +8,7 @@ import { testimonials } from "../mockData";
 const Hero = styled.div`
   background-size: cover;
   background-position: center;
+  background-image: url("/assets/images/backgroundImage.webp");
   height: 500px;
   display: flex;
   justify-content: center;

@@ -100,17 +100,17 @@ const About = () => {
       <Subtitle>Nossa Equipe</Subtitle>
       <TeamSection>
         <TeamMember>
-          <img src="/assets/images/editor1.jpeg" alt="Editor 1" />
+          <img src="https://avatars.githubusercontent.com/u/94625698" alt="Editor 1" />
           <h3>Paulo Victor</h3>
           <p>Editor-Chefe</p>
         </TeamMember>
         <TeamMember>
-          <img src="/assets/images/editor2.jpeg" alt="Editor 2" />
+          <img src="https://avatars.githubusercontent.com/u/70920004" alt="Editor 2" />
           <h3>Alfredo Andrade</h3>
           <p>Editor Assistente</p>
         </TeamMember>
         <TeamMember>
-          <img src="/assets/images/editor3.jpeg" alt="Editor 3" />
+          <img src="https://avatars.githubusercontent.com/u/91812687" alt="Editor 3" />
           <h3>Gabriel Victor</h3>
           <p>Revisor    </p>
         </TeamMember>
@@ -123,9 +123,9 @@ const About = () => {
           e corporativos.
         </Text>
         <PartnerLogos>
-          <img src="/assets/images/partner1.jpeg" alt="Parceiro 1" />
+          <img src="/assets/images/partner1.webp" alt="Parceiro 1" />
           <img src="/assets/images/partner2.jpeg" alt="Parceiro 2" />
-          <img src="/assets/images/partner3.jpeg" alt="Parceiro 3" />
+          <img src="/assets/images/partner3.png"alt="Parceiro 3" />
         </PartnerLogos>
       </PartnersSection>
     </Section>
