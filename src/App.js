@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Publications from "./pages/Publications";
+import PublicationDetail from "./pages/PublicationDetail";
 import Authors from "./pages/Authors";
 import Submissions from "./pages/Submissions";
 import Events from "./pages/Events";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/publications" element={<Publications />} />
+        <Route path="/publications/:id" element={<PublicationDetail />} />{" "}
         <Route path="/authors" element={<Authors />} />
         <Route path="/submissions" element={<Submissions />} />
         <Route path="/events" element={<Events />} />

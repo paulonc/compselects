@@ -1,27 +1,156 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { books } from "../mockData";
 
 const Section = styled.section`
   padding: 2rem;
 `;
 
+const Title = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+`;
+
+const SearchBar = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  input,
+  select {
+    padding: 0.75rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+`;
+
+const BookGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+`;
+
+const BookCard = styled.div`
+  background-color: white;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  a {
+    margin-top: 1rem;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+`;
+
 const Publications = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [filterYear, setFilterYear] = useState("");
+
+  const handleSearch = () => {};
+
+  const filteredBooks = books.filter((book) => {
+    const matchesSearch =
+      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      book.author.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = filterCategory
+      ? book.category === filterCategory
+      : true;
+    const matchesYear = filterYear ? book.year === filterYear : true;
+
+    return matchesSearch && matchesCategory && matchesYear;
+  });
+
   return (
     <Section>
-      <h1>Catálogo de Publicações</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Aenean a erat nec sapien malesuada scelerisque. Curabitur fermentum magna ut dolor sodales, ut malesuada risus fringilla. Integer non odio quis lorem tempor vehicula nec vel libero.
-      </p>
-      <h2>Categorias</h2>
-      <ul>
-        <li>Livros de Programação</li>
-        <li>Artigos Acadêmicos</li>
-        <li>Relatórios Técnicos</li>
-        <li>Jornais e Revistas Digitais</li>
-      </ul>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus dictum felis et justo cursus, non suscipit ligula hendrerit. Praesent et orci id leo consectetur luctus.
-      </p>
+      <Title>Catálogo de Publicações</Title>
+
+      <SearchBar>
+        <input
+          type="text"
+          placeholder="Buscar por título ou autor"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <select onChange={(e) => setFilterCategory(e.target.value)}>
+          <option value="">Categoria</option>
+          <option value="Programação">Livros de Programação</option>
+          <option value="Artigos">Artigos Acadêmicos</option>
+          <option value="Relatórios">Relatórios Técnicos</option>
+        </select>
+        <select onChange={(e) => setFilterYear(e.target.value)}>
+          <option value="">Ano</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+        </select>
+        <button onClick={handleSearch}>Buscar</button>
+      </SearchBar>
+
+      <BookGrid>
+        {filteredBooks.map((book) => (
+          <BookCard key={book.id}>
+            <img src={book.image} alt={book.title} />
+            <h3>{book.title}</h3>
+            <p>{book.author}</p>
+            <p>{book.year}</p>
+            <a href={`/publications/${book.id}`}>Ver Detalhes</a>
+          </BookCard>
+        ))}
+      </BookGrid>
     </Section>
   );
 };
