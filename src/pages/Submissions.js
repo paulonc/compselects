@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { mockSubmissions } from "../mockData";
 import * as Yup from "yup";
@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-// Validação do formulário com Yup
 const SubmissionSchema = Yup.object().shape({
   title: Yup.string().required("Título é obrigatório"),
   author: Yup.string().required("Autor é obrigatório"),
@@ -15,7 +14,6 @@ const SubmissionSchema = Yup.object().shape({
   file: Yup.mixed().required("Arquivo é obrigatório"),
 });
 
-// Estilizações usando styled-components
 const PageContainer = styled.div`
   padding: 2rem;
   max-width: 800px;

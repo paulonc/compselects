@@ -2,25 +2,35 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { books } from "../mockData";
 
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const Section = styled.section`
+  flex: 1;
   padding: 2rem;
+  background-color: #f8f9fa;
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #333;
 `;
 
 const SearchBar = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 
   input,
   select {
     padding: 0.75rem;
-    margin-right: 1rem;
+    margin: 0.5rem;
     border-radius: 5px;
     border: 1px solid #ddd;
     font-size: 1rem;
@@ -34,6 +44,7 @@ const SearchBar = styled.div`
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    margin: 0.5rem;
 
     &:hover {
       background-color: #0056b3;
@@ -95,6 +106,13 @@ const BookCard = styled.div`
   }
 `;
 
+const NoResultsMessage = styled.p`
+  font-size: 1.5rem;
+  color: #555;
+  text-align: center;
+  margin-top: 3rem;
+`;
+
 const Publications = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("");
@@ -115,43 +133,49 @@ const Publications = () => {
   });
 
   return (
-    <Section>
-      <Title>Catálogo de Publicações</Title>
+    <PageContainer>
+      <Section>
+        <Title>Catálogo de Publicações</Title>
 
-      <SearchBar>
-        <input
-          type="text"
-          placeholder="Buscar por título ou autor"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <select onChange={(e) => setFilterCategory(e.target.value)}>
-          <option value="">Categoria</option>
-          <option value="Programação">Livros de Programação</option>
-          <option value="Artigos">Artigos Acadêmicos</option>
-          <option value="Relatórios">Relatórios Técnicos</option>
-        </select>
-        <select onChange={(e) => setFilterYear(e.target.value)}>
-          <option value="">Ano</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-        </select>
-        <button onClick={handleSearch}>Buscar</button>
-      </SearchBar>
+        <SearchBar>
+          <input
+            type="text"
+            placeholder="Buscar por título ou autor"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <select onChange={(e) => setFilterCategory(e.target.value)}>
+            <option value="">Categoria</option>
+            <option value="Programação">Livros de Programação</option>
+            <option value="Artigos">Artigos Acadêmicos</option>
+            <option value="Relatórios">Relatórios Técnicos</option>
+          </select>
+          <select onChange={(e) => setFilterYear(e.target.value)}>
+            <option value="">Ano</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+          </select>
+          <button onClick={handleSearch}>Buscar</button>
+        </SearchBar>
 
-      <BookGrid>
-        {filteredBooks.map((book) => (
-          <BookCard key={book.id}>
-            <img src={book.image} alt={book.title} />
-            <h3>{book.title}</h3>
-            <p>{book.author}</p>
-            <p>{book.year}</p>
-            <a href={`/publications/${book.id}`}>Ver Detalhes</a>
-          </BookCard>
-        ))}
-      </BookGrid>
-    </Section>
+        {filteredBooks.length === 0 ? (
+          <NoResultsMessage>Nenhum livro encontrado.</NoResultsMessage>
+        ) : (
+          <BookGrid>
+            {filteredBooks.map((book) => (
+              <BookCard key={book.id}>
+                <img src={book.image} alt={book.title} />
+                <h3>{book.title}</h3>
+                <p>{book.author}</p>
+                <p>{book.year}</p>
+                <a href={`/publications/${book.id}`}>Ver Detalhes</a>
+              </BookCard>
+            ))}
+          </BookGrid>
+        )}
+      </Section>
+    </PageContainer>
   );
 };
 
