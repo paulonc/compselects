@@ -62,3 +62,27 @@ export const testimonials = [
     author: "Ana Santos, Cientista de Dados",
   },
 ];
+
+export const mockSubmissions = [
+  {
+    id: 1,
+    title: "O Impacto da Tecnologia na Educação",
+    author: "João Silva",
+    abstract: "Este estudo analisa como a tecnologia tem transformado o ambiente educacional...",
+    email: "joao.silva@email.com",
+  },
+  {
+    id: 2,
+    title: "Inteligência Artificial e Ética",
+    author: "Maria Oliveira",
+    abstract: "A ética na inteligência artificial é um tópico de crescente importância na sociedade moderna...",
+    email: "maria.oliveira@email.com",
+  },
+  {
+    id: 3,
+    title: "Desenvolvimento Sustentável e Inovação",
+    author: "Carlos Pereira",
+    abstract: "Explorar o conceito de desenvolvimento sustentável em relação às novas tecnologias e inovações...",
+    email: "carlos.pereira@email.com",
+  },
+];

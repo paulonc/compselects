@@ -1,15 +1,18 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { mockSubmissions } from "../mockData";
+import * as Yup from "yup";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 // Validação do formulário com Yup
 const SubmissionSchema = Yup.object().shape({
-  title: Yup.string().required('Título é obrigatório'),
-  author: Yup.string().required('Autor é obrigatório'),
-  abstract: Yup.string().required('Resumo é obrigatório'),
-  email: Yup.string().required('Email é obrigatório').email('Email inválido'),
-  file: Yup.mixed().required('Arquivo é obrigatório')
+  title: Yup.string().required("Título é obrigatório"),
+  author: Yup.string().required("Autor é obrigatório"),
+  abstract: Yup.string().required("Resumo é obrigatório"),
+  email: Yup.string().required("Email é obrigatório").email("Email inválido"),
+  file: Yup.mixed().required("Arquivo é obrigatório"),
 });
 
 // Estilizações usando styled-components
@@ -79,7 +82,7 @@ const SubmitButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1.5rem;
-  
+
   &:hover {
     background-color: #0056b3;
   }
@@ -100,6 +103,32 @@ const PolicySection = styled.div`
   line-height: 1.6;
 `;
 
+const SubmissionList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const SubmissionItem = styled.li`
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+`;
+
+const DownloadButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: #0056b3;
+  }
+`;
+const submissions = mockSubmissions;
+
 const Submissions = () => {
   return (
     <PageContainer>
@@ -107,7 +136,8 @@ const Submissions = () => {
         <Title>Guia de Submissão</Title>
         <GuideSection>
           <p>
-            Para submeter seu manuscrito para avaliação, siga as diretrizes abaixo:
+            Para submeter seu manuscrito para avaliação, siga as diretrizes
+            abaixo:
           </p>
           <ul>
             <li>O manuscrito deve ser formatado conforme o seguinte padrão:</li>
@@ -115,7 +145,9 @@ const Submissions = () => {
               <li>Fonte: Times New Roman, tamanho 12</li>
               <li>Espaçamento entre linhas: 1.5</li>
               <li>Margens: 2,5 cm em todos os lados</li>
-              <li>Página de título contendo o nome do manuscrito e dos autores</li>
+              <li>
+                Página de título contendo o nome do manuscrito e dos autores
+              </li>
               <li>Referências no estilo APA</li>
             </ul>
             <li>O arquivo deve ser enviado nos formatos PDF ou DOCX.</li>
@@ -127,11 +159,14 @@ const Submissions = () => {
         <Title>Formulário de Submissão</Title>
         <FormContainer>
           <Formik
-            initialValues={{ title: '', author: '', abstract: '', email: '', file: null }}
-            validationSchema={SubmissionSchema}
-            onSubmit={(values) => {
-              console.log(values);
+            initialValues={{
+              title: "",
+              author: "",
+              abstract: "",
+              email: "",
+              file: null,
             }}
+            validationSchema={SubmissionSchema}
           >
             {({ setFieldValue }) => (
               <Form>
@@ -160,7 +195,9 @@ const Submissions = () => {
                   <input
                     name="file"
                     type="file"
-                    onChange={(event) => setFieldValue('file', event.currentTarget.files[0])}
+                    onChange={(event) =>
+                      setFieldValue("file", event.currentTarget.files[0])
+                    }
                   />
                   <ErrorMessage name="file" component={Error} />
                 </div>
@@ -171,16 +208,42 @@ const Submissions = () => {
         </FormContainer>
       </Section>
 
-      {/* Política Editorial */}
       <Section>
         <Title>Política Editorial</Title>
         <PolicySection>
           <p>
-            A revisão dos manuscritos será feita de forma anônima por pelo menos dois avaliadores.
-            Os autores devem garantir que os manuscritos seguem as normas éticas de publicação,
-            e a submissão implica que os direitos autorais serão transferidos para a revista após a aprovação.
+            A revisão dos manuscritos será feita de forma anônima por pelo menos
+            dois avaliadores. Os autores devem garantir que os manuscritos
+            seguem as normas éticas de publicação, e a submissão implica que os
+            direitos autorais serão transferidos para a revista após a
+            aprovação.
           </p>
         </PolicySection>
+      </Section>
+
+      <Section>
+        <Title>Listagem de Submissões</Title>
+        <SubmissionList>
+          {submissions.map((submission) => (
+            <SubmissionItem key={submission.id}>
+              <div>
+                <h3>{submission.title}</h3>
+                <p>
+                  <strong>Autor(es):</strong> {submission.author}
+                </p>
+                <p>
+                  <strong>Resumo:</strong> {submission.abstract}
+                </p>
+                <p>
+                  <strong>Email:</strong> {submission.email}
+                </p>
+              </div>
+              <DownloadButton title="Baixar arquivo">
+                <FontAwesomeIcon icon={faDownload} />
+              </DownloadButton>
+            </SubmissionItem>
+          ))}
+        </SubmissionList>
       </Section>
     </PageContainer>
   );
