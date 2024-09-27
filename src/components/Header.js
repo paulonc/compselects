@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ImBooks } from "react-icons/im";
-import { FiMenu, FiX } from "react-icons/fi"; // Ícones para menu aberto e fechado
+import { FiMenu, FiX } from "react-icons/fi";
 import styled from "styled-components";
 
 const Navbar = styled.nav`
@@ -13,7 +13,7 @@ const Navbar = styled.nav`
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: space-between; /* Espaço entre logo e menu */
+  justify-content: space-between;
   align-items: center;
 
   @media (max-width: 1024px) {

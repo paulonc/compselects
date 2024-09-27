@@ -7,6 +7,7 @@ import PublicationDetail from "./pages/PublicationDetail";
 import Authors from "./pages/Authors";
 import Submissions from "./pages/Submissions";
 import Events from "./pages/Events";
+import EventDetail from "./pages/EventsDetail";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/authors" element={<Authors />} />
         <Route path="/submissions" element={<Submissions />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventDetail />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
