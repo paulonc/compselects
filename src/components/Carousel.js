@@ -2,15 +2,20 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import { books } from "../mockData";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const CarouselWrapper = styled.div`
   padding: 2rem;
   background-color: #f4f4f9;
+  position: relative;
+`;
+
+const CardWrapper = styled.div`
+  padding: 0 10px; /* Adiciona margem entre os quadros */
 `;
 
 const BookCard = styled.div`
   padding: 1rem;
-  margin: 1rem;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -54,6 +59,57 @@ const BookDescription = styled.p`
   margin-top: 0.5rem;
 `;
 
+const ArrowButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #111111;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  font-size: 1.5rem; /* Tamanho do ícone */
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba(17, 17, 17, 0.8);
+  }
+
+  &::before {
+    content: "";
+  }
+`;
+
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <ArrowButton
+      className={className}
+      style={{ ...style, right: -25, display: "flex" }}
+      onClick={onClick}
+    >
+      <FaArrowRight />
+    </ArrowButton>
+  );
+};
+
+
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <ArrowButton
+      className={className}
+      style={{ ...style, left: -25, display: "flex" }}
+      onClick={onClick}
+    >
+      <FaArrowLeft />
+    </ArrowButton>
+  );
+};
+
 const Carousel = () => {
   const settings = {
     dots: true,
@@ -61,6 +117,8 @@ const Carousel = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -79,17 +137,18 @@ const Carousel = () => {
     ],
   };
 
-  console.log(books);
   return (
     <CarouselWrapper>
       <Slider {...settings}>
         {books.map((book) => (
-          <BookCard key={book.id}>
-            <img src={book.image} alt={book.title} />
-            <BookTitle>{book.title}</BookTitle>
-            <BookAuthor>Por {book.author}</BookAuthor>
-            <BookDescription>{book.description}</BookDescription>
-          </BookCard>
+          <CardWrapper key={book.id}>
+            <BookCard>
+              <img src={book.image} alt={book.title} />
+              <BookTitle>{book.title}</BookTitle>
+              <BookAuthor>Por {book.author}</BookAuthor>
+              <BookDescription>{book.description}</BookDescription>
+            </BookCard>
+          </CardWrapper>
         ))}
       </Slider>
     </CarouselWrapper>

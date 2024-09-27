@@ -8,13 +8,13 @@ import { testimonials } from "../mockData";
 const Hero = styled.div`
   background-size: cover;
   background-position: center;
-  background-image: url("/assets/images/backgroundImage.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/images/backgroundImage.webp");
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 2.5rem;
+  font-size: 1.4rem;
   text-align: center;
   padding: 0 1rem;
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.7);
@@ -173,7 +173,8 @@ const Home = () => {
     <>
       <Hero>
         <div>
-          <h1>Explore Nossos Livros e Envie Seu Manuscrito</h1>
+          <h1>Explore nossos Livros</h1>
+          <p>Faça parte do nosso time</p>
           <Button to="/submissions">Envie Seu Manuscrito</Button>
         </div>
       </Hero>
