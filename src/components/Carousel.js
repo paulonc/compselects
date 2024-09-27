@@ -76,6 +76,7 @@ const ArrowButton = styled.div`
 
   &:hover {
     background: rgba(17, 17, 17, 0.8);
+    color: white;
   }
 
   &::before {
