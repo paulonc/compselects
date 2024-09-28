@@ -1,11 +1,14 @@
 import React from 'react';
-import { SectionContainer, SectionTitle } from '../styles/Section.styles';
+import { SectionContainer, Title, Subtitle, Text } from '../styles/Section.styles';
 
-const Section = ({ title, children }) => (
-  <SectionContainer>
-    <SectionTitle>{title}</SectionTitle>
-    {children}
-  </SectionContainer>
-);
+const Section = ({ title, subtitle, children }) => {
+  return (
+    <SectionContainer>
+      <Title>{title}</Title>
+      {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      <Text>{children}</Text>
+    </SectionContainer>
+  );
+};
 
 export default Section;

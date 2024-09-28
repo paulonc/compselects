@@ -42,8 +42,6 @@ const Home = () => {
       <Section title="Destaques">
         <Carousel />
       </Section>
-
-      {/* About Section revertida */}
       <AboutSection>
         <h2>Sobre a Editora</h2>
         <p>
