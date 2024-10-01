@@ -36,7 +36,7 @@ const NavList = styled.ul`
     width: 100%;
     flex-direction: column;
     background-color: #232f3e;
-    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+    max-height: ${({ isOpen }) => (isOpen ? "auto" : "0")}; /* Ajuste */
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
   }
