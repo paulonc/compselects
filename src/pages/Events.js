@@ -6,6 +6,10 @@ import { events } from "../mockData";
 const CalendarContainer = styled.div`
   padding: 3rem 2rem;
   background-color: #f4f4f9;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const CalendarTitle = styled.h1`
@@ -14,6 +18,14 @@ const CalendarTitle = styled.h1`
   color: #007bff;
   text-align: center;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const EventList = styled.div`
@@ -43,6 +55,15 @@ const EventCard = styled(Link)`
   &:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 1rem;
+  }
 `;
 
 const EventHeader = styled.div`
@@ -50,18 +71,31 @@ const EventHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const EventTitle = styled.h2`
   font-size: 1.5rem;
   margin: 0;
   font-family: "Merriweather", serif;
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const EventDate = styled.span`
   font-size: 1.1rem;
   font-weight: bold;
   color: #007bff;
+
+  @media (max-width: 480px) {
+    margin-top: 0.5rem;
+  }
 `;
 
 const EventLocation = styled.p`
