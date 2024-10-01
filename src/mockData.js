@@ -108,6 +108,117 @@ export const books = [
       "Inclui exercícios práticos e um banco de dados de exemplo para estudo.",
     downloadLink: "/downloads/banco-dados-teoria-pratica.pdf",
   },
+  {
+    id: 6,
+    title: "Desenvolvimento Web com React",
+    author: "Laura Mendes",
+    category: "Programação",
+    year: "2024",
+    image: "/assets/images/react.jpeg",
+    description: "Um guia prático para construir aplicações web com React.",
+    fullDescription:
+      "Este livro oferece uma introdução ao desenvolvimento de aplicações web modernas usando o framework React. Com exemplos práticos, os leitores aprenderão a criar componentes reutilizáveis e gerenciar o estado das aplicações de maneira eficiente.",
+    summary: [
+      "Introdução ao React",
+      "Componentes e Props",
+      "Gerenciamento de Estado",
+      "React Hooks",
+      "Integração com APIs",
+      "Desafios Práticos",
+    ],
+    additionalInfo:
+      "Inclui exemplos de código no GitHub e exercícios para prática individual.",
+    downloadLink: "/downloads/react-dev.pdf",
+  },
+  {
+    id: 7,
+    title: "Machine Learning Aplicado",
+    author: "Júlia Fernandes",
+    category: "Inteligência Artificial",
+    year: "2024",
+    image: "/assets/images/machine_learning.jpeg",
+    description:
+      "Exploração prática de algoritmos de aprendizado de máquina e suas aplicações.",
+    fullDescription:
+      "Este livro abrange técnicas e algoritmos de Machine Learning aplicados a problemas do mundo real. Desde regressões até redes neurais, este guia oferece uma visão abrangente sobre as tecnologias emergentes de IA.",
+    summary: [
+      "Fundamentos de Machine Learning",
+      "Regressão Linear e Logística",
+      "Redes Neurais e Deep Learning",
+      "Modelos Não Supervisionados",
+      "Aplicações Práticas",
+    ],
+    additionalInfo:
+      "Acompanha notebooks em Python e exemplos práticos em Scikit-learn.",
+    downloadLink: "/downloads/machine-learning-aplicado.pdf",
+  },
+  {
+    id: 8,
+    title: "Desenvolvimento Mobile com Flutter",
+    author: "Bruno Oliveira",
+    category: "Desenvolvimento Mobile",
+    year: "2023",
+    image: "/assets/images/flutter_mobile.jpeg",
+    description:
+      "Crie aplicações mobile multiplataforma usando o framework Flutter.",
+    fullDescription:
+      "Com este livro, desenvolvedores aprenderão a construir aplicativos para Android e iOS utilizando o Flutter, um dos frameworks mais populares da atualidade. Inclui exemplos práticos e um projeto completo de um aplicativo mobile.",
+    summary: [
+      "Introdução ao Flutter",
+      "Widgets e Layouts",
+      "Gerenciamento de Estado com Provider",
+      "Integração com APIs REST",
+      "Publicação de Aplicativos",
+      "Desafios e Exercícios",
+    ],
+    additionalInfo:
+      "Acompanha exemplos de código e templates prontos para uso.",
+    downloadLink: "/downloads/flutter-mobile.pdf",
+  },
+  {
+    id: 9,
+    title: "Análise de Dados com Python",
+    author: "Fernanda Costa",
+    category: "Data Science",
+    year: "2023",
+    image: "/assets/images/analise_dados_python.jpeg",
+    description:
+      "Aprenda a manipular, visualizar e interpretar dados usando Python.",
+    fullDescription:
+      "Neste livro, exploramos como Python pode ser utilizado para análise de dados, abordando desde o uso de bibliotecas como Pandas e Matplotlib até o desenvolvimento de pipelines de análise. Ideal para cientistas de dados iniciantes e avançados.",
+    summary: [
+      "Manipulação de Dados com Pandas",
+      "Visualização de Dados com Matplotlib",
+      "Estatísticas Básicas e Avançadas",
+      "Introdução ao Machine Learning com Python",
+      "Estudos de Caso Reais",
+    ],
+    additionalInfo:
+      "Inclui notebooks Jupyter com exemplos e projetos completos.",
+    downloadLink: "/downloads/analise-dados-python.pdf",
+  },
+  {
+    id: 10,
+    title: "DevOps para Iniciantes",
+    author: "Roberto Lima",
+    category: "DevOps",
+    year: "2024",
+    image: "/assets/images/devops.jpeg",
+    description:
+      "Aprenda a integrar o desenvolvimento e operações de software.",
+    fullDescription:
+      "Um guia essencial para entender os conceitos e práticas de DevOps, que visa integrar as equipes de desenvolvimento e operações para uma entrega contínua de software. Ideal para iniciantes na área.",
+    summary: [
+      "Conceitos Fundamentais de DevOps",
+      "Integração Contínua e Entrega Contínua (CI/CD)",
+      "Automatização de Testes",
+      "Infraestrutura como Código",
+      "Monitoramento e Logging",
+    ],
+    additionalInfo:
+      "Inclui exemplos práticos de pipelines CI/CD e templates de automação.",
+    downloadLink: "/downloads/devops-iniciantes.pdf",
+  },
 ];
 
 export const testimonials = [
@@ -191,6 +302,41 @@ export const authors = [
     bio: "Especialista em bancos de dados e otimização de consultas, com vasta experiência na área.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/pedro-santos",
+  },
+  {
+    id: 6,
+    name: "Laura Mendes",
+    bio: "Desenvolvedora Front-End especializada em React e experiência do usuário (UX).",
+    image: "https://via.placeholder.com/150",
+    publications: "/publications/laura-mendes",
+  },
+  {
+    id: 7,
+    name: "Júlia Fernandes",
+    bio: "Pesquisadora na área de Inteligência Artificial, com foco em aprendizado de máquina e redes neurais.",
+    image: "https://via.placeholder.com/150",
+    publications: "/publications/julia-fernandes",
+  },
+  {
+    id: 8,
+    name: "Bruno Oliveira",
+    bio: "Desenvolvedor Mobile com experiência em Flutter e React Native.",
+    image: "https://via.placeholder.com/150",
+    publications: "/publications/bruno-oliveira",
+  },
+  {
+    id: 9,
+    name: "Fernanda Costa",
+    bio: "Cientista de Dados especializada em análise de dados e visualização de grandes volumes de dados.",
+    image: "https://via.placeholder.com/150",
+    publications: "/publications/fernanda-costa",
+  },
+  {
+    id: 10,
+    name: "Roberto Lima",
+    bio: "Especialista em DevOps e automação de infraestrutura, com experiência em CI/CD.",
+    image: "https://via.placeholder.com/150",
+    publications: "/publications/roberto-lima",
   },
 ];
 
