@@ -222,21 +222,29 @@ export const books = [
 ];
 
 export const testimonials = [
-  {
+  { 
+    id: 1,
     text: "Os livros da Compselects me ajudaram a compreender conceitos avançados de Inteligência Artificial de forma clara e acessível.",
-    author: "João Silva, Professor de Computação",
+    author: "João Silva",
+    role: "Professor de Computação",
   },
   {
+    id: 2,
     text: "A coleção de livros sobre programação da Compselects é essencial para quem está começando na área de desenvolvimento de software.",
-    author: "Maria Pereira, Desenvolvedora Full Stack",
+    author: "Maria Pereira",
+    role: "Desenvolvedora Full Stack",
   },
   {
+    id: 3,
     text: "Fiquei impressionado com a qualidade editorial da Compselects. Os textos são de altíssimo nível e de fácil compreensão.",
-    author: "Carlos Souza, Engenheiro de Software",
+    author: "Carlos Souza",
+    role: "Engenheiro de Software",
   },
   {
+    id: 4,
     text: "Os livros sobre Ciência de Dados da Compselects são os mais completos e didáticos que encontrei no mercado.",
-    author: "Ana Santos, Cientista de Dados",
+    author: "Ana Santos",
+    role: "Cientista de Dados",
   },
 ];
 
@@ -270,73 +278,93 @@ export const mockSubmissions = [
 export const authors = [
   {
     id: 1,
-    name: "João Silva",
+    author: "João Silva",
     bio: "Especialista em Ciência da Computação, com foco em Inteligência Artificial e Estruturas de Dados.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/joao-silva",
+    text: "Publicar com a editora foi uma experiência incrível. O suporte editorial me ajudou a refinar minhas ideias e alcançar um público maior do que eu imaginava.",
+    role: "Professor de Ciência da Computação"
   },
   {
     id: 2,
-    name: "Maria Souza",
+    author: "Maria Souza",
     bio: "Desenvolvedora Full Stack com experiência em aplicações web e ensino de programação.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/maria-souza",
+    text: "Foi uma jornada transformadora trabalhar com a equipe. Eles foram atenciosos e dedicados, garantindo que cada detalhe fosse perfeito.",
+    role: "Desenvolvedora Full Stack"
   },
   {
     id: 3,
-    name: "Carlos Oliveira",
+    author: "Carlos Oliveira",
     bio: "Autor de diversos livros sobre programação e desenvolvimento de software, apaixonado por IA.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/carlos-oliveira",
+    text: "Eu não poderia ter escolhido uma editora melhor. O processo de publicação foi tranquilo e as minhas ideias foram valorizadas desde o início.",
+    role: "Autor e Especialista em IA"
   },
   {
     id: 4,
-    name: "Ana Lima",
+    author: "Ana Lima",
     bio: "Engenheira de Software com expertise em metodologias ágeis e DevOps.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/ana-lima",
+    text: "A atenção aos detalhes e o suporte contínuo fizeram toda a diferença no meu processo de publicação. Recomendo totalmente!",
+    role: "Engenheira de Software"
   },
   {
     id: 5,
-    name: "Pedro Santos",
+    author: "Pedro Santos",
     bio: "Especialista em bancos de dados e otimização de consultas, com vasta experiência na área.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/pedro-santos",
+    text: "O processo de publicação foi ágil e transparente, e o resultado final superou minhas expectativas. Estou muito satisfeito com a experiência.",
+    role: "Especialista em Bancos de Dados"
   },
   {
     id: 6,
-    name: "Laura Mendes",
+    author: "Laura Mendes",
     bio: "Desenvolvedora Front-End especializada em React e experiência do usuário (UX).",
     image: "https://via.placeholder.com/150",
     publications: "/publications/laura-mendes",
+    text: "Trabalhar com a editora foi uma experiência muito enriquecedora. Eles cuidaram de todos os detalhes, e o feedback foi extremamente valioso.",
+    role: "Desenvolvedora Front-End"
   },
   {
     id: 7,
-    name: "Júlia Fernandes",
+    author: "Júlia Fernandes",
     bio: "Pesquisadora na área de Inteligência Artificial, com foco em aprendizado de máquina e redes neurais.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/julia-fernandes",
+    text: "O suporte editorial foi fenomenal. O time ajudou a transformar meu manuscrito em uma obra que realmente reflete minhas ideias e minha pesquisa.",
+    role: "Pesquisadora em IA"
   },
   {
     id: 8,
-    name: "Bruno Oliveira",
+    author: "Bruno Oliveira",
     bio: "Desenvolvedor Mobile com experiência em Flutter e React Native.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/bruno-oliveira",
+    text: "A equipe foi extremamente profissional e sempre disponível para discutir ideias. O processo foi fluido e o resultado final ficou incrível.",
+    role: "Desenvolvedor Mobile"
   },
   {
     id: 9,
-    name: "Fernanda Costa",
+    author: "Fernanda Costa",
     bio: "Cientista de Dados especializada em análise de dados e visualização de grandes volumes de dados.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/fernanda-costa",
+    text: "A editora oferece um nível de suporte excepcional. Publicar meu trabalho com eles foi uma das melhores decisões que tomei na minha carreira.",
+    role: "Cientista de Dados"
   },
   {
     id: 10,
-    name: "Roberto Lima",
+    author: "Roberto Lima",
     bio: "Especialista em DevOps e automação de infraestrutura, com experiência em CI/CD.",
     image: "https://via.placeholder.com/150",
     publications: "/publications/roberto-lima",
+    text: "Desde o primeiro contato até a publicação final, a experiência foi de altíssimo nível. Estou muito satisfeito com o resultado.",
+    role: "Especialista em DevOps"
   },
 ];
 

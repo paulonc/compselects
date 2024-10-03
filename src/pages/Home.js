@@ -5,7 +5,7 @@ import Testimonials from "../components/Testimonials";
 import EventCard from "../components/EventCard";
 import Button from "../components/Button";
 import styled from "styled-components";
-import { events } from "../mockData";
+import { events, testimonials } from "../mockData";
 
 const AboutSection = styled.section`
   background-color: #f4f4f9;
@@ -83,7 +83,7 @@ const Home = () => {
         </p>
         <CustomButton to="/about">Saiba Mais Sobre Nós</CustomButton>
       </AboutSection>
-      <Testimonials />
+      <Testimonials role={"leitores"} data={testimonials} />
       <EventsSection title="Próximos Eventos">
         <EventGrid>
           {events.slice(0, 2).map((event) => (

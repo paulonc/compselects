@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { testimonials } from "../mockData";
 
 const TestimonialsSection = styled.section`
   background-color: #f9f9f9;
@@ -78,12 +77,12 @@ const Role = styled.p`
   color: #999;
 `;
 
-const Testimonials = () => {
+const Testimonials = (props) => {
   return (
     <TestimonialsSection>
-      <h2>O que nossos leitores estão dizendo</h2>
+      <h2>O que nossos {props.role} estão dizendo</h2>
       <TestimonialGrid>
-        {testimonials.map((testimonial) => (
+        {props.data.map((testimonial) => (
           <TestimonialCard key={testimonial.id}>
             <TestimonialText>"{testimonial.text}"</TestimonialText>
             <Author>{testimonial.author}</Author>
