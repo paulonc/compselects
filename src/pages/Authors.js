@@ -85,7 +85,7 @@ const Authors = () => {
             <AuthorImage src={author.image} alt={author.author} />
             <AuthorName>{author.author}</AuthorName>
             <AuthorBio>{author.bio}</AuthorBio>
-            <AuthorLink href={author.publicationLink}>Ver publicações</AuthorLink>
+            <AuthorLink href={author.publications}>Ver publicações</AuthorLink>
           </AuthorCard>
         ))}
       </Grid>
